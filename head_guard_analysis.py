@@ -5,11 +5,9 @@ def analisar_cabecalho_email(caminho_arquivo):
     msg = extract_msg.Message(caminho_arquivo)
     header = msg.header
     # Define os campos que serão extraídos do cabeçalho
-    header_keys = ["Remetente","Destinatário","Assunto","Data de envio",'Message-ID', \
-                    "Received-SPF","Return-Path","DKIM-Signature","DMARC"]
+    header_keys = ["Remetente","Destinatário","Assunto","Data de envio",'Message-ID',"Received-SPF","Return-Path","DKIM-Signature","DMARC"]
     # Extrai os valores que serão associados a cada campo
-    header_values = [msg.sender,msg.to,msg.subject,msg.date,header.get('Message-ID'), \
-                     header.get('Received-SPF'),header.get('Return-Path'),header.get('DKIM-Signature'),header.get('DMARC')]
+    header_values = [msg.sender,msg.to,msg.subject,msg.date,header.get('Message-ID'),header.get('Received-SPF'),header.get('Return-Path'),header.get('DKIM-Signature'),header.get('DMARC')]
     
     header_data = {}
 
